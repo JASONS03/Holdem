@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Home of Hold'em</title>
+</head>
+
+<body>
+    <h1>Hold'em Predictor  德扑概率预判器</h1>
+    <p> Here is the content </p>
+    <form method='POST'>
+        <select name="suits">
+            <option value="Spades"> spades 黑桃 </option>
+            <option value="Hearts"> hearts 红心 </option>
+            <option value="Clubs"> clubs 梅花 </option>
+            <option value="Diamonds"> diamonds 方片 </option>
+        </select>
+        <br>
+        <select name="number">
+            <option value="2"> 2 </option>
+            <option value="3"> 3 </option>
+            <option value="4"> 4 </option>
+            <option value="5"> 5 </option>
+            <option value="6"> 6 </option>
+            <option value="7"> 7 </option>
+            <option value="8"> 8 </option>
+            <option value="9"> 9 </option>
+            <option value="T"> 10 </option>
+            <option value="J"> J </option>
+            <option value="Q"> Q </option>
+            <option value="K"> K </option>
+            <option value="A"> A </option>
+        </select>
+        <br>
+        <input type='submit'>
+    </form>
+
+    <p> Here is the card you choose: </p>
+    <p> 这是你选择的一张牌：</p>
+    <h2 th:text="${card.suits}+' '+${card.number}"> please choose a card </h2>
+
+
+</body>
+</html>

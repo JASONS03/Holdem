@@ -30,6 +30,13 @@ public class HoldemApplicationTests {
 				.andDo(MockMvcResultHandlers.print())
 				.andReturn();
 	}
+	@Test
+	public void getMain() throws Exception {
+		mvc.perform(MockMvcRequestBuilders.get("/").accept(MediaType.APPLICATION_JSON))
+				.andExpect(MockMvcResultMatchers.status().isOk())
+				.andDo(MockMvcResultHandlers.print())
+				.andReturn();
+	}
 
 }
 
