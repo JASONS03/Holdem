@@ -9,6 +9,8 @@ package com.junlun.holdem.Holdem.controller;
         import org.springframework.web.bind.annotation.RestController;
 
         import java.util.HashMap;
+        import java.util.LinkedList;
+        import java.util.List;
 
 
 @Controller
@@ -19,12 +21,13 @@ public class MainController {
     }
 
     @RequestMapping("/")
-    public String create(@RequestParam(value = "suits", required = false) String suits,
-                         @RequestParam(value = "number", required = false) String number,
+    public String create(@RequestParam(value = "suits", required = false) Integer suits,
+                         @RequestParam(value = "number", required = false) Integer number,
+                         @RequestParam(value = "who", required = false) Integer who,
                          Model model) {
-        Card card = new Card(suits, number);
 
-        model.addAttribute(card);
+
+        model.addAttribute("card", new Card(suits, number));
         return "home";
     }
 }

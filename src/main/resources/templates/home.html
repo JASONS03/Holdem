@@ -9,14 +9,13 @@
 <body>
     <h1>Hold'em Predictor  德扑概率预判器</h1>
     <p> Here is the content </p>
-    <form method='POST'>
+    <form method='POST' th:type="numbers">
         <select name="suits">
-            <option value="Spades"> spades 黑桃 </option>
-            <option value="Hearts"> hearts 红心 </option>
-            <option value="Clubs"> clubs 梅花 </option>
-            <option value="Diamonds"> diamonds 方片 </option>
+            <option value="4"> spades 黑桃 </option>
+            <option value="3"> hearts 红心 </option>
+            <option value="2"> clubs 梅花 </option>
+            <option value="1"> diamonds 方片 </option>
         </select>
-        <br>
         <select name="number">
             <option value="2"> 2 </option>
             <option value="3"> 3 </option>
@@ -26,19 +25,40 @@
             <option value="7"> 7 </option>
             <option value="8"> 8 </option>
             <option value="9"> 9 </option>
-            <option value="T"> 10 </option>
-            <option value="J"> J </option>
-            <option value="Q"> Q </option>
-            <option value="K"> K </option>
-            <option value="A"> A </option>
+            <option value="10"> 10 </option>
+            <option value="11"> J </option>
+            <option value="12"> Q </option>
+            <option value="13"> K </option>
+            <option value="1"> A </option>
+        </select>
+        <br>
+        <select name="who">
+            <option value="0"> mine 我的牌</option>
+            <option value="1"> player one 一号玩家 </option>
+            <option value="2"> Dealer 庄家</option>
         </select>
         <br>
         <input type='submit'>
     </form>
 
-    <p> Here is the card you choose: </p>
-    <p> 这是你选择的一张牌：</p>
+    <p> Here are the cards you chose: </p>
+    <p> 这是你选择的牌：</p>
     <h2 th:text="${card.suits}+' '+${card.number}"> please choose a card </h2>
+    <h2 th:text="${card.suits}+' '+${card.number}"> please choose a card </h2>
+
+    <p> Here are the cards of your opponent: </p>
+    <p> 这是你对手的牌：</p>
+    <h2 th:text="${card.suits}+' '+${card.number}"> please choose a card </h2>
+    <h2 th:text="${card.suits}+' '+${card.number}"> please choose a card </h2>
+
+    <p> Flop 前三张公共牌：</p>
+    <h2 th:text=" ${card.suits}+' '+${card.number} "> please choose a card </h2>
+    <h2 th:text=" ${card.suits}+' '+${card.number} "> please choose a card </h2>
+    <h2 th:text=" ${card.suits}+' '+${card.number} "> please choose a card </h2>
+    <p> Turn 转牌：</p>
+    <h2 th:text=" ${card.suits}+' '+${card.number} "> please choose a card </h2>
+    <p> River 河牌：</p>
+    <h2 th:text=" ${card.suits}+' '+${card.number} "> please choose a card </h2>
 
 
 </body>
